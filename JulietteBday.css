@@ -1,0 +1,65 @@
+
+
+.grid-house {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid-item img {
+	height: auto;
+	width: 100%;
+	position: ;
+}
+
+.grid-item:hover {
+	filter: brightness(.8);
+	cursor: alias;
+}
+
+
+#poppa {
+	display: none;
+	position: absolute;
+	animation-name: slideImage;
+	animation-duration: 1s;
+	top: 15vh;
+	left: 30%;
+
+
+
+}
+
+#poppa img{
+	height: auto;
+	width: 100%;
+}
+
+#exit {
+	float: right;
+
+	position: relative;
+	top: 21px;
+	
+}
+
+}
+@keyframes slideImage {
+	from {
+		top: -100vh;
+	}
+
+	to {
+		top: 15vh;
+	}
+}
+
+#confetti {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+
+	pointer-events: none;
+}
+
+
+
