@@ -1,75 +1,72 @@
- 	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Login</title>
-		<link rel="icon" href="Hi.png">
-	</head>
-	<body>
-		
-		<center class="hello mepopo">
-	<form name="form1">
-		<p>Username</p>
-		<input type="text" name="Username">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pop-Ups</title>
+	<link rel="stylesheet" type="text/css" href="JulietteBday.css">
+</head>
+<body>
+
+	<img id="confetti" src="confetti.gif">
+
+	
+	<div class="grid-house">
+		<div class="grid-item">
+			<img src="GiftIcon.png">
+
+		</div>
+		<div class="grid-item" onclick="showPopup()">
+			<img src="GiftIcon.png">
+			
+		</div>
+
+			
+		</div>
+	
+	</div>
+<a href="" download>
+
+</a>
 
 
-		<p>Password</p>
-		<input type="text" name="Pword">
+	<div id="poppa">
 
-		<br><br>
-		<button type="button" onclick="logincheck()">Submit</button>
-
-	</form>
-	</center>
-
-	<h1 id="Loggedin"></h1>
-
+		<button id="exit" onclick="exitPopup()">x</button>
+		<img src="test.jpeg">
+	</div>
 
 	<script type="text/javascript">
-		
-		var http = 
 
 
-		function funoneo() {
-			window.location.replace("hello site.html")
-		} 
 
-		function logincheck() {
-			
-			if(document.forms["form1"]["Username"].value == "Kovfam" && document.forms["form1"]["Pword"].value == "Kovam"){
-				
+		function showPopup() {
 
-				window.open('mailto:happyshot1010@gmail.com?subject=We are on our way&body=The Kovacs are on there way')
-				window.location.replace("kov.html");
-				return
-				}else{
-					document.getElementById("Loggedin").innerHTML = "ACCESS DENIED";
-				}
+			var popUp = document.getElementById("poppa");
+			popUp.style.display = "block";
 
-			if(document.forms["form1"]["Username"].value == "Brook" && document.forms["form1"]["Pword"].value == "Bfam"){
-				window.open('mailto:happyshot1010@gmail.com?subject=We are on our way&body=The Brookmans are on there way')
-				window.location.replace("Brookmans.html");
-				return
-
-			}
-			else {
-				document.getElementById("Loggedin").innerHTML = "ACCESS DENIED";
-			}
-				if(document.forms["form1"]["Username"].value == "Ms.Burke" && document.forms["form1"]["Pword"].value == "gym"){
-				
-				window.location.replace("gym.html");
-				return
-
-				}else {
-					document.getElementById("Loggedin").innerHTML = "ACCESS DENIED";
-				}
 		}
 
+		//showPopup()
 
+		function exitPopup() {
+
+			var popUp = document.getElementById("poppa")
+			popUp.style.display = "none";
+
+			popUp.style.animation("byeby 1s")
+		}
 	</script>
-	</body>
-	</html>
 
 
-     
 
- 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
