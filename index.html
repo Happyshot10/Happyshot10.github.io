@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JULIETTE BIRTHDAY SUPRISE SITE</title>
-	<link rel="stylesheet" type="text/css" href="JulietteBday.css">
+	<title></title>
+
 </head>
 <body>
-
-	<img id="confetti" src="confetti.gif">
-
-	
-	<div class="grid-house">
-		<div class="grid-item">
-			<img src="GiftIcon.png">
-
-		</div>
-		<div class="grid-item" onclick="showPopup()">
-			<img src="GiftIcon.png">
-			
-		</div>
-
-			
-		</div>
-	
-	</div>
-<a href="" download>
-
-</a>
-
-
-	<div id="poppa">
-
-		<button id="exit" onclick="exitPopup()">x</button>
-		<img src="test.jpeg">
+	<div>
+		
 	</div>
 
-	<script type="text/javascript">
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 
 
 
-		function showPopup() {
-
-			var popUp = document.getElementById("poppa");
-			popUp.style.display = "block";
-
-		}
-
-		//showPopup()
-
-		function exitPopup() {
-
-			var popUp = document.getElementById("poppa")
-			popUp.style.display = "none";
-
-			popUp.style.animation("byeby 1s")
-		}
-	</script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
 
 
 
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBe6Shssjz2ntW9Lkp_ZDbiPGLvvdJyFsQ",
+    authDomain: "my-chat-room-e804f.firebaseapp.com",
+    projectId: "my-chat-room-e804f",
+    storageBucket: "my-chat-room-e804f.appspot.com",
+    messagingSenderId: "20285528017",
+    appId: "1:20285528017:web:317ba10dcdb67061ccb2f0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var myName = prompt("Enter Name Below")
+
+  function sendMessage() {
+  	  var message = document.getElementById('message').value;
+
+  firebase.database().ref("messages").push().set({
+  	"sender": myName,
+  	"message": message
+
+  });
+  	alert(message)
+  	// Prevents screen from refreshing
+  	return false;
+  }
+
+//Object Oriented Programing
+
+firebase.database().ref("messages").on("child_added", function(snapshot){
+	var html = "";
+	html += "<li>";
+	html += snapshot.val().sender + ":" + snapshot.val().message;
+	html += "</li>"
+	document.getElementById("messages").innerHTML += html;
+});
+</script>
+
+<form onsubmit="return sendMessage();">
+	<input id="message" type="text">
+	<input type="submit">
+<!-- Type Any Comments Here-->
+	<ul id="messages">
+</form>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
