@@ -54,12 +54,13 @@
 firebase.database().ref("messages").on("child_added", function(snapshot){
 	var html = "";
 	html += "<li>";
-	html += snapshot.val().sender + "Sent The Message" + snapshot.val().message;
+	html += snapshot.val().sender + " Would Like Too Say " + snapshot.val().message;
 	html += "</li>"
 	document.getElementById("messages").innerHTML += html;
 });
 </script>
-
+<h1>TYPE YOUR CHATS BELOW</h1>
+<br>
 <form onsubmit="return sendMessage();">
 	<input id="message" type="text">
 	<input type="submit">
